@@ -322,7 +322,6 @@ export default function LandingPage() {
               </motion.div>
             </motion.div>
 
-            {/* RIGHT: Hero Image */}
             <motion.div
               style={{ opacity, scale }}
               className="relative flex items-center justify-center order-1 lg:order-2"
