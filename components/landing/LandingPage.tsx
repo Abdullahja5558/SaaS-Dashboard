@@ -43,7 +43,6 @@ export default function LandingPage() {
     offset: ["start start", "end start"],
   });
 
-  // Improved hero persistence: stays visible much longer during scroll
   const opacity = useTransform(scrollYProgress, [0, 0.7, 0.9], [1, 1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.8], [1, 0.98]);
   const y = useTransform(scrollYProgress, [0, 1], [0, -30]);
