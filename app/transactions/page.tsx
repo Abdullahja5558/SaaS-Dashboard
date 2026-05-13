@@ -62,7 +62,7 @@ export default function TransactionsPage() {
       head: [['Customer', 'Amount', 'Status', 'Category', 'Date']],
       body: tableData,
       theme: 'grid',
-      headStyles: { fillStyle: 'fill', fillColor: [99, 102, 241], textColor: [255, 255, 255], fontStyle: 'bold' },
+      headStyles: { fillColor: [99, 102, 241], textColor: [255, 255, 255], fontStyle: 'bold' },
       alternateRowStyles: { fillColor: [245, 247, 250] },
       margin: { top: 50 },
     });

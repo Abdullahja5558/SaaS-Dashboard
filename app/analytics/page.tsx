@@ -71,7 +71,7 @@ export default function AnalyticsPage() {
       head: [['Month', 'Revenue', 'Orders', 'New Users']],
       body: tableData,
       theme: 'grid',
-      headStyles: { fillStyle: 'fill', fillColor: [99, 102, 241], textColor: [255, 255, 255], fontStyle: 'bold' },
+      headStyles: { fillColor: [99, 102, 241], textColor: [255, 255, 255], fontStyle: 'bold' },
       alternateRowStyles: { fillColor: [245, 247, 250] },
       margin: { top: 90 },
     });
