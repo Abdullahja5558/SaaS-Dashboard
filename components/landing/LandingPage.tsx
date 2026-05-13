@@ -116,7 +116,6 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
 
-            {/* LEFT: Text Content */}
             <motion.div
               style={{ opacity, y }}
               className="flex flex-col items-start order-2 lg:order-1"
