@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   title: "CORELYTICS | Next-Gen Business Intelligence & Analytics",
   description: "Transform your business data into stunning visual insights. Corelytics provides real-time tracking, AI-powered growth predictions, and military-grade security for modern enterprises.",
   keywords: "analytics, business intelligence, dashboard, SaaS, data visualization, real-time tracking",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

@@ -23,6 +23,7 @@ import {
   DollarSign
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
@@ -98,240 +99,197 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section ref={targetRef} className="relative pt-32 pb-20 lg:pt-56 lg:pb-32 flex flex-col items-center justify-center text-center px-6">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
-          <motion.div 
-            animate={{ x: [-100, 100, -100], y: [-50, 50, -50] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute top-[10%] left-[10%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary/10 blur-[100px] md:blur-[140px] rounded-full" 
+      <section ref={targetRef} className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 px-6 overflow-hidden">
+
+        {/* Ambient background glows */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <motion.div
+            animate={{ x: [-80, 80, -80], y: [-40, 40, -40] }}
+            transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+            className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-primary/10 blur-[140px] rounded-full"
           />
+          <motion.div
+            animate={{ x: [60, -60, 60], y: [30, -30, 30] }}
+            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+            className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-purple-500/8 blur-[120px] rounded-full"
+          />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
         </div>
 
-        <motion.div style={{ opacity, scale, y }} className="relative z-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 md:px-5 py-2 rounded-full bg-secondary/80 border border-border/50 text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] text-primary mb-6 md:mb-10 shadow-sm"
-          >
-            <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
-            AI-POWERED BUSINESS INTELLIGENCE
-          </motion.div>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
 
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl sm:text-6xl md:text-8xl lg:text-[110px] font-display font-black leading-[1.1] md:leading-[0.9] tracking-[-0.04em] mb-8 md:mb-12 max-w-[1200px]"
-          >
-            Data that <br className="hidden md:block" />
-            <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent pb-2 md:pb-4 inline-block">
-              Speaks Your Language.
-            </span>
-          </motion.h1>
-
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-base md:text-lg lg:text-xl text-muted-foreground/80 max-w-2xl mx-auto mb-10 md:mb-14 font-medium leading-relaxed px-4"
-          >
-            Corelytics turns complex business data into stunning visual narratives 
-            that drive growth, clarity, and decisive action.
-          </motion.p>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6"
-          >
-            <Link 
-              href="/onboarding" 
-              className="w-full sm:w-auto group bg-foreground text-background px-8 md:px-12 py-4 md:py-6 rounded-[18px] md:rounded-[22px] text-base md:text-lg font-black flex items-center justify-center gap-3 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:-translate-y-1 active:scale-95"
+            {/* LEFT: Text Content */}
+            <motion.div
+              style={{ opacity, y }}
+              className="flex flex-col items-start order-2 lg:order-1"
             >
-              Get Started Free
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <button className="w-full sm:w-auto group flex items-center justify-center gap-4 px-8 md:px-10 py-4 md:py-6 rounded-[18px] md:rounded-[22px] border-2 border-border/50 hover:bg-secondary transition-all font-black text-base md:text-lg">
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                <Play size={14} fill="currentColor" />
-              </div>
-              Watch Demo
-            </button>
-          </motion.div>
-        </motion.div>
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-secondary/80 border border-border/60 text-[11px] font-black uppercase tracking-[0.22em] text-primary mb-8 shadow-sm"
+              >
+                <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                AI-Powered Business Intelligence
+              </motion.div>
 
-        {/* Live Intelligence Showcase - Ultra Premium Redesign */}
-        <div className="mt-20 md:mt-32 relative w-full max-w-7xl mx-auto px-4 lg:px-0 overflow-visible">
-           {/* Background Glow - Optimized for Performance */}
-           <div className="absolute -top-10 -left-10 w-[200px] md:w-[600px] h-[200px] md:h-[600px] bg-primary/10 blur-[80px] md:blur-[160px] rounded-full pointer-events-none opacity-50 will-change-[filter]" />
-           <div className="absolute -bottom-10 -right-10 w-[200px] md:w-[600px] h-[200px] md:h-[600px] bg-purple-500/10 blur-[80px] md:blur-[160px] rounded-full pointer-events-none opacity-50 will-change-[filter]" />
+              {/* Headline */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="text-[42px] sm:text-6xl lg:text-[62px] xl:text-[76px] font-display font-black leading-[1.05] tracking-[-0.04em] mb-7"
+              >
+                Data that{" "}
+                <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                  Speaks Your
+                </span>
+                <br />
+                Language.
+              </motion.h1>
 
-           <motion.div
-             initial={{ opacity: 0, y: 40 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.8, ease: "easeOut" }}
-             className="relative group will-change-transform"
-           >
-             {/* Floating Insight Card 1 - Top Left */}
-             <motion.div
-               animate={{ y: [0, -10, 0] }}
-               transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-               className="absolute -top-8 -left-2 md:-top-16 md:-left-10 z-20 glass-card p-3 md:p-6 rounded-[20px] md:rounded-[32px] border border-white/40 shadow-xl hidden lg:block will-change-transform"
-             >
-               <div className="flex items-center gap-3">
-                 <div className="w-8 h-8 md:w-12 md:h-12 bg-emerald-500/20 rounded-xl md:rounded-2xl flex items-center justify-center text-emerald-500">
-                   <TrendingUp size={18} className="md:w-5 md:h-5" />
-                 </div>
-                 <div>
-                   <p className="text-[8px] md:text-xs font-black text-muted-foreground uppercase tracking-widest">Growth Rate</p>
-                   <p className="text-sm md:text-2xl font-black">+24.8%</p>
-                 </div>
-               </div>
-             </motion.div>
+              {/* Subtext */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-base md:text-lg text-muted-foreground/80 max-w-lg mb-10 font-medium leading-relaxed"
+              >
+                Corelytics turns complex business data into stunning visual
+                narratives that drive growth, clarity, and decisive action — in
+                real time.
+              </motion.p>
 
-             {/* Floating Insight Card 2 - Bottom Right */}
-             <motion.div
-               animate={{ y: [0, 10, 0] }}
-               transition={{ duration: 7, repeat: Infinity, ease: "linear", delay: 1 }}
-               className="absolute -bottom-8 -right-2 md:-bottom-16 md:-right-10 z-20 glass-card p-3 md:p-6 rounded-[20px] md:rounded-[32px] border border-white/40 shadow-xl hidden lg:block will-change-transform"
-             >
-               <div className="flex items-center gap-3">
-                 <div className="w-8 h-8 md:w-12 md:h-12 bg-primary/20 rounded-xl md:rounded-2xl flex items-center justify-center text-primary">
-                   <Zap size={18} className="md:w-5 md:h-5" fill="currentColor" />
-                 </div>
-                 <div>
-                   <p className="text-[8px] md:text-xs font-black text-muted-foreground uppercase tracking-widest">Active Now</p>
-                   <div className="flex items-center gap-1.5">
-                     <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
-                     <p className="text-sm md:text-2xl font-black">1,240</p>
-                   </div>
-                 </div>
-               </div>
-             </motion.div>
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12 w-full sm:w-auto"
+              >
+                <Link
+                  href="/onboarding"
+                  className="group flex items-center justify-center gap-3 bg-foreground text-background px-8 py-4 rounded-2xl text-base font-black transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:-translate-y-1 active:scale-95"
+                >
+                  Get Started Free
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <button className="group flex items-center justify-center gap-3 px-8 py-4 rounded-2xl border-2 border-border/50 hover:bg-secondary transition-all font-black text-base">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                    <Play size={13} fill="currentColor" />
+                  </div>
+                  Watch Demo
+                </button>
+              </motion.div>
 
-             <div className="relative z-10 glass-card rounded-[40px] md:rounded-[60px] p-2 md:p-4 border border-white/20 shadow-[0_50px_120px_rgba(0,0,0,0.15)] overflow-hidden [perspective:1000px]">
-               <motion.div
-                 whileHover={{ scale: 1.005 }}
-                 transition={{ duration: 0.5 }}
-                 className="relative rounded-[32px] md:rounded-[50px] bg-background border border-border/40 overflow-hidden"
-               >
-                 <div className="p-6 md:p-14">
-                   <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-12 md:mb-16">
-                     <div className="flex items-center gap-6">
-                       <div className="w-14 h-14 md:w-16 md:h-16 bg-primary rounded-[24px] md:rounded-[28px] flex items-center justify-center text-white shadow-xl shadow-primary/20 rotate-3">
-                         <BarChart3 size={28} />
-                       </div>
-                       <div className="text-left">
-                         <h4 className="font-black tracking-tighter text-2xl md:text-3xl">Live Intelligence</h4>
-                         <div className="flex items-center gap-2 mt-1">
-                           <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                           <p className="text-[10px] md:text-xs text-muted-foreground font-black uppercase tracking-[0.2em]">Live Data Stream • 20ms Latency</p>
-                         </div>
-                       </div>
-                     </div>
-                     
-                     <div className="flex items-center gap-3 w-full lg:w-auto">
-                        <div className="flex-1 lg:flex-none px-6 py-3 rounded-2xl bg-secondary/80 border border-border/50 text-[11px] font-black uppercase tracking-widest flex items-center justify-center gap-2">
-                          <Users size={14} />
-                          Overview
-                        </div>
-                        <div className="flex-1 lg:flex-none px-6 py-3 rounded-2xl bg-primary text-primary-foreground text-[11px] font-black uppercase tracking-widest shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
-                          <TrendingUp size={14} />
-                          Analytics
-                        </div>
-                     </div>
-                   </div>
+              {/* Social proof row */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.45 }}
+                className="flex flex-wrap items-center gap-6"
+              >
+                {[
+                  { value: "12k+", label: "Businesses" },
+                  { value: "99.9%", label: "Uptime SLA" },
+                  { value: "$2.4M", label: "Revenue tracked" },
+                ].map((s, i) => (
+                  <div key={i} className="flex flex-col">
+                    <span className="text-2xl font-black tracking-tighter text-foreground">{s.value}</span>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">{s.label}</span>
+                  </div>
+                ))}
+                <div className="hidden sm:block w-px h-10 bg-border/50 mx-1" />
+                <div className="flex -space-x-2.5">
+                  {["A", "S", "J", "M"].map((l, i) => (
+                    <div key={i} className="w-9 h-9 rounded-full border-2 border-background bg-gradient-to-br from-primary/80 to-purple-500/80 flex items-center justify-center text-[10px] font-black text-white shadow-sm">
+                      {l}
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  <div className="flex gap-0.5">
+                    {[1,2,3,4,5].map(i => <Star key={i} size={12} fill="currentColor" className="text-amber-400" />)}
+                  </div>
+                  <p className="text-[10px] font-bold text-muted-foreground mt-0.5">5.0 from 2k+ reviews</p>
+                </div>
+              </motion.div>
+            </motion.div>
 
-                   <div className="grid grid-cols-12 gap-6 md:gap-12">
-                     <div className="col-span-12 xl:col-span-8 space-y-6 md:space-y-12">
-                        {/* Main Visualization Card */}
-                        <div className="relative group/chart h-[300px] md:h-[450px] bg-secondary/20 rounded-[40px] p-8 md:p-12 border border-border/30 overflow-hidden">
-                           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover/chart:opacity-100 transition-opacity duration-700" />
-                           
-                           <div className="relative z-10 flex justify-between items-start mb-12">
-                             <div className="text-left">
-                               <p className="text-[10px] md:text-xs font-black text-muted-foreground uppercase tracking-[0.3em] mb-2">Total Managed Revenue</p>
-                               <h5 className="text-4xl md:text-7xl font-black tracking-tighter">$2.4M<span className="text-primary text-2xl md:text-4xl">.00</span></h5>
-                             </div>
-                             <div className="px-4 py-2 rounded-xl bg-emerald-500/10 text-emerald-500 text-[10px] md:text-xs font-black flex items-center gap-2">
-                               <TrendingUp size={14} /> +32% THIS MONTH
-                             </div>
-                           </div>
+            {/* RIGHT: Hero Image */}
+            <motion.div
+              style={{ opacity, scale }}
+              className="relative flex items-center justify-center order-1 lg:order-2"
+            >
+              {/* Outer glow ring */}
+              <div className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-primary/15 via-purple-500/10 to-pink-500/5 blur-[60px]" />
 
-                           <div className="absolute bottom-0 left-0 right-0 h-48 md:h-64 flex items-end gap-2 md:gap-4 px-8 md:px-12 pb-8 md:pb-12">
-                             {[50, 70, 45, 90, 65, 100, 80, 50, 85, 40, 60, 30, 75, 95, 60, 80, 45, 70].map((h, i) => (
-                               <motion.div
-                                 key={i}
-                                 initial={{ height: 0 }}
-                                 whileInView={{ height: `${h}%` }}
-                                 transition={{ delay: i * 0.05, duration: 1 }}
-                                 className="flex-1 bg-gradient-to-t from-primary/20 via-primary to-primary rounded-t-2xl shadow-[0_-10px_20px_rgba(99,102,241,0.2)]"
-                               />
-                             ))}
-                           </div>
-                        </div>
+              {/* Floating card — top left */}
+              <motion.div
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-5 -left-4 sm:-top-8 sm:-left-8 z-30 flex items-center gap-3 bg-background/95 backdrop-blur-xl border border-border/50 shadow-2xl px-4 py-3 rounded-2xl"
+              >
+                <div className="w-9 h-9 rounded-xl bg-emerald-500/15 flex items-center justify-center text-emerald-500">
+                  <TrendingUp size={16} />
+                </div>
+                <div>
+                  <p className="text-[9px] font-black uppercase tracking-widest text-muted-foreground">Growth</p>
+                  <p className="text-lg font-black text-emerald-500 leading-none">+24.8%</p>
+                </div>
+              </motion.div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                           {[
-                             { icon: <ShoppingCart size={20} />, value: "2,840", label: "Orders", color: "text-primary" },
-                             { icon: <Users size={20} />, value: "12.5k", label: "Visitors", color: "text-purple-500" },
-                             { icon: <Zap size={20} />, value: "99.9%", label: "Uptime", color: "text-amber-500" },
-                           ].map((stat, i) => (
-                             <div key={i} className="p-6 md:p-8 rounded-[32px] bg-secondary/20 border border-border/30 hover:bg-secondary/40 transition-all group/stat text-left">
-                               <div className={`${stat.color} mb-4 group-hover/stat:scale-110 transition-transform`}>{stat.icon}</div>
-                               <p className="text-2xl md:text-3xl font-black mb-1">{stat.value}</p>
-                               <p className="text-[10px] font-black text-muted-foreground uppercase tracking-widest">{stat.label}</p>
-                             </div>
-                           ))}
-                        </div>
-                     </div>
+              {/* Floating card — bottom right */}
+              <motion.div
+                animate={{ y: [0, 12, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+                className="absolute -bottom-5 -right-4 sm:-bottom-8 sm:-right-8 z-30 flex items-center gap-3 bg-background/95 backdrop-blur-xl border border-border/50 shadow-2xl px-4 py-3 rounded-2xl"
+              >
+                <div className="w-9 h-9 rounded-xl bg-primary/15 flex items-center justify-center text-primary">
+                  <Zap size={16} fill="currentColor" />
+                </div>
+                <div>
+                  <p className="text-[9px] font-black uppercase tracking-widest text-muted-foreground">Active Users</p>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+                    <p className="text-lg font-black leading-none">1,240</p>
+                  </div>
+                </div>
+              </motion.div>
 
-                     {/* Sidebar Activity Panel */}
-                     <div className="col-span-12 xl:col-span-4 glass-card p-6 md:p-10 rounded-[40px] border border-border/50 text-left flex flex-col">
-                        <div className="flex items-center justify-between mb-10">
-                          <h5 className="font-black text-xs uppercase tracking-widest">Live Activity</h5>
-                          <div className="flex gap-1">
-                            <span className="w-1 h-1 bg-primary rounded-full animate-bounce" />
-                            <span className="w-1 h-1 bg-primary rounded-full animate-bounce [animation-delay:0.2s]" />
-                            <span className="w-1 h-1 bg-primary rounded-full animate-bounce [animation-delay:0.4s]" />
-                          </div>
-                        </div>
+              {/* Live badge — top right */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+                className="absolute top-6 -right-2 sm:top-10 sm:-right-6 z-30 flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-xl shadow-xl shadow-primary/25 text-[11px] font-black"
+              >
+                <CheckCircle2 size={13} /> Live Data
+              </motion.div>
 
-                        <div className="space-y-6 flex-1">
-                           {[
-                             { name: "Global Stack", type: "Enterprise", amt: "$14.2k", status: "Processed" },
-                             { name: "Sarah Miller", type: "Professional", amt: "$240", status: "Success" },
-                             { name: "FinTech Inc", type: "Starter", amt: "$890", status: "Paid" },
-                             { name: "Digital Edge", type: "Professional", amt: "$3.1k", status: "Success" },
-                             { name: "Cloud Nine", type: "Enterprise", amt: "$12k", status: "Pending" },
-                           ].map((tx, i) => (
-                             <div key={i} className="flex items-center justify-between p-4 rounded-3xl bg-secondary/10 hover:bg-secondary/30 transition-all group/item border border-transparent hover:border-border/30">
-                               <div className="flex items-center gap-4">
-                                  <div className="w-12 h-12 rounded-2xl bg-background border border-border/50 flex items-center justify-center font-black text-primary text-sm shadow-sm group-hover/item:scale-110 transition-transform">{tx.name[0]}</div>
-                                  <div>
-                                     <p className="text-sm font-black tracking-tight">{tx.name}</p>
-                                     <p className="text-[10px] text-muted-foreground font-black uppercase">{tx.type}</p>
-                                  </div>
-                               </div>
-                               <div className="text-right">
-                                  <p className="text-sm font-black">{tx.amt}</p>
-                                  <p className="text-[8px] font-black text-emerald-500 uppercase tracking-tighter">{tx.status}</p>
-                               </div>
-                             </div>
-                           ))}
-                        </div>
+              {/* Main image */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.92, y: 30 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+                whileHover={{ scale: 1.015 }}
+                className="relative z-20 w-full rounded-[32px] sm:rounded-[40px] overflow-hidden border border-border/30 shadow-[0_40px_100px_rgba(0,0,0,0.18)] bg-secondary/10"
+              >
+                <Image
+                  src="/1.png"
+                  alt="Corelytics Dashboard Preview"
+                  width={800}
+                  height={560}
+                  className="w-full h-auto object-cover block"
+                  priority
+                />
+                {/* Bottom fade */}
+                <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background/50 to-transparent pointer-events-none" />
+              </motion.div>
+            </motion.div>
 
-                        <button className="w-full mt-12 py-5 rounded-3xl bg-foreground text-background text-[11px] font-black uppercase tracking-[0.2em] hover:scale-[1.02] active:scale-95 transition-all shadow-xl">
-                          Access Intelligence Dashboard
-                        </button>
-                     </div>
-                   </div>
-                 </div>
-               </motion.div>
-             </div>
-           </motion.div>
+          </div>
         </div>
       </section>
 
@@ -407,16 +365,16 @@ export default function LandingPage() {
                   <ul className="space-y-5 text-sm font-bold text-muted-foreground">
                     <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
                     <li><Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link></li>
-                    <li><Link href="/login" className="hover:text-primary transition-colors">Contact</Link></li>
+                    <li><Link href="/support" className="hover:text-primary transition-colors">Contact</Link></li>
                   </ul>
                </div>
 
                <div>
                   <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-foreground mb-10">Resources</h4>
                   <ul className="space-y-5 text-sm font-bold text-muted-foreground">
-                    <li><a href="#" className="hover:text-primary transition-colors">Documentation</a></li>
-                    <li><a href="#" className="hover:text-primary transition-colors">API Status</a></li>
-                    <li><a href="#" className="hover:text-primary transition-colors">Support</a></li>
+                    <li><Link href="/docs" className="hover:text-primary transition-colors">Documentation</Link></li>
+                    <li><Link href="/api-status" className="hover:text-primary transition-colors">API Status</Link></li>
+                    <li><Link href="/support" className="hover:text-primary transition-colors">Support</Link></li>
                   </ul>
                </div>
             </div>
