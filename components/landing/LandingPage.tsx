@@ -329,7 +329,6 @@ export default function LandingPage() {
               
               <div className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-primary/15 via-purple-500/10 to-pink-500/5 blur-[60px]" />
 
-              {/* Floating card — top left */}
               <motion.div
                 animate={{ y: [0, -12, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
