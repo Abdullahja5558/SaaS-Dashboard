@@ -99,7 +99,6 @@ export default function LandingPage() {
 
       <section ref={targetRef} className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 px-6 overflow-hidden">
 
-        {/* Ambient background glows */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           <motion.div
             animate={{ x: [-80, 80, -80], y: [-40, 40, -40] }}
