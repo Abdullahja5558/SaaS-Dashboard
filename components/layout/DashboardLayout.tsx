@@ -6,22 +6,30 @@ import { useUser } from "@/hooks/useUser";
 import Spinner from "@/components/ui/Spinner";
 import PageWrapper from "./PageWrapper";
 
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
 export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const { user, loading } = useUser();
+  const router = useRouter();
 
-  if (loading) {
+  useEffect(() => {
+    if (!loading && !user) {
+      router.push("/login");
+    }
+  }, [user, loading, router]);
+
+  if (loading || !user) {
     return (
       <div className="h-screen w-full flex items-center justify-center bg-background">
         <Spinner className="h-12 w-12" />
       </div>
     );
   }
-
-  if (!user) return null;
 
   return (
     <div className="flex min-h-screen bg-background overflow-x-hidden selection:bg-primary/30">

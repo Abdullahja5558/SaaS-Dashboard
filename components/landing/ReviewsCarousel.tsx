@@ -90,12 +90,12 @@ export default function ReviewsCarousel() {
         <div className="relative flex items-center justify-center">
            <button 
              onClick={prev}
-             className="absolute left-0 z-20 w-12 h-12 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-white transition-all shadow-lg -translate-x-1/2 md:translate-x-0"
+             className="absolute left-2 md:-left-6 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-white transition-all shadow-lg border border-border/50"
            >
               <ChevronLeft size={20} />
            </button>
 
-           <div className="w-full max-w-4xl overflow-hidden px-4">
+           <div className="w-full max-w-4xl overflow-hidden px-0 md:px-4">
               <AnimatePresence mode="wait">
                  <motion.div
                    key={index}
@@ -103,18 +103,18 @@ export default function ReviewsCarousel() {
                    animate={{ opacity: 1, x: 0 }}
                    exit={{ opacity: 0, x: -50 }}
                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                   className="glass-card p-12 md:p-20 rounded-[48px] border border-border/50 text-center relative"
+                   className="glass-card p-8 pt-14 md:p-20 rounded-[32px] md:rounded-[48px] border border-border/50 text-center relative mx-4 md:mx-0"
                  >
-                    <Quote className="absolute top-10 left-10 text-primary/10 w-24 h-24 -z-10" />
-                    <div className="flex justify-center gap-1 mb-8">
-                       {[1,2,3,4,5].map(i => <Star key={i} size={20} className="fill-amber-500 text-amber-500" />)}
+                    <Quote className="absolute top-6 left-6 md:top-10 md:left-10 text-primary/10 w-16 h-16 md:w-24 md:h-24 -z-10" />
+                    <div className="flex justify-center gap-1 mb-6 md:mb-8">
+                       {[1,2,3,4,5].map(i => <Star key={i} size={16} className="md:w-5 md:h-5 fill-amber-500 text-amber-500" />)}
                     </div>
-                    <p className="text-2xl md:text-3xl font-medium italic leading-relaxed mb-12">"{reviews[index].content}"</p>
+                    <p className="text-xl md:text-3xl font-medium italic leading-relaxed mb-8 md:mb-12">"{reviews[index].content}"</p>
                     <div className="flex flex-col items-center gap-4">
-                       <img src={reviews[index].avatar} alt={reviews[index].name} className="w-16 h-16 rounded-2xl object-cover shadow-xl" />
+                       <img src={reviews[index].avatar} alt={reviews[index].name} className="w-14 h-14 md:w-16 md:h-16 rounded-2xl object-cover shadow-xl" />
                        <div>
-                          <h4 className="font-black text-xl">{reviews[index].name}</h4>
-                          <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest mt-1">{reviews[index].role}</p>
+                          <h4 className="font-black text-lg md:text-xl">{reviews[index].name}</h4>
+                          <p className="text-[10px] md:text-sm font-bold text-muted-foreground uppercase tracking-widest mt-1">{reviews[index].role}</p>
                        </div>
                     </div>
                  </motion.div>
@@ -123,7 +123,7 @@ export default function ReviewsCarousel() {
 
            <button 
              onClick={next}
-             className="absolute right-0 z-20 w-12 h-12 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-white transition-all shadow-lg translate-x-1/2 md:translate-x-0"
+             className="absolute right-2 md:-right-6 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-white transition-all shadow-lg border border-border/50"
            >
               <ChevronRight size={20} />
            </button>
