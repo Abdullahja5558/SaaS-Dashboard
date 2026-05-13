@@ -343,7 +343,7 @@ export default function LandingPage() {
                 </div>
               </motion.div>
 
-              {/* Floating card — bottom right */}
+              
               <motion.div
                 animate={{ y: [0, 12, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
