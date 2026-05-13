@@ -54,7 +54,7 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-500 overflow-x-hidden">
-      {/* Dynamic Navbar */}
+     
       <nav className="fixed top-0 w-full z-[100] border-b border-border/40 bg-background/60 backdrop-blur-2xl">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -97,7 +97,6 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section ref={targetRef} className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 px-6 overflow-hidden">
 
         {/* Ambient background glows */}
