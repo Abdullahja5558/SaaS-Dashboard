@@ -254,7 +254,6 @@ export default function LandingPage() {
                 Language.
               </motion.h1>
 
-              {/* Subtext */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
