@@ -230,7 +230,6 @@ export default function LandingPage() {
               style={{ opacity, y }}
               className="flex flex-col items-start order-2 lg:order-1"
             >
-              {/* Badge */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
