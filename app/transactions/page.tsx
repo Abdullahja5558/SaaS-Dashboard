@@ -48,7 +48,7 @@ export default function TransactionsPage() {
     doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 36);
     doc.text(`Business: ${user.business_name}`, 14, 42);
     
-    // Add Table
+   
     const tableData = transactions.map(tx => [
       tx.customer_name,
       `$${tx.amount}`,
