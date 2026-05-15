@@ -38,7 +38,7 @@ export default function TransactionsPage() {
     
    
     doc.setFontSize(22);
-    doc.setTextColor(99, 102, 241); // Primary color
+    doc.setTextColor(99, 102, 241); 
     doc.text("CORELYTICS", 14, 22);
     
     // Add Report Info
