@@ -36,7 +36,7 @@ export default function TransactionsPage() {
   const exportToPDF = () => {
     const doc = new jsPDF();
     
-    // Add Brand Name
+   
     doc.setFontSize(22);
     doc.setTextColor(99, 102, 241); // Primary color
     doc.text("CORELYTICS", 14, 22);
