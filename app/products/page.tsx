@@ -36,7 +36,7 @@ export default function ProductsPage() {
 
   const handleOpenModal = (product?: Product) => {
    
-    if (!product && (user.plan === 'Free' || !user.plan) && products.length >= 5) {
+    if (!product && (user.plan === 'Free' || !user.plan) && products.length >= 20) {
       setIsUpgradeModalOpen(true);
       return;
     }
