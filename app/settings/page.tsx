@@ -157,7 +157,6 @@ export default function SettingsPage() {
               </form>
             </div>
 
-            {/* Business Section */}
             <div className="glass-card rounded-3xl p-8 border border-white/5">
               <h3 className="text-xl font-display font-bold mb-6 flex items-center gap-2">
                 <Building2 size={20} className="text-primary" />
