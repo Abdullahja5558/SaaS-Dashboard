@@ -41,7 +41,7 @@ export default function TransactionsPage() {
     doc.setTextColor(99, 102, 241); 
     doc.text("CORELYTICS", 14, 22);
     
-    // Add Report Info
+ 
     doc.setFontSize(10);
     doc.setTextColor(100);
     doc.text("TRANSACTION LEDGER REPORT", 14, 30);
