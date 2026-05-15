@@ -72,7 +72,7 @@ export default function TransactionsPage() {
   };
 
   const handleOpenModal = (tx?: Transaction) => {
-    // Check limit for Free plan (20 transactions)
+   
     if (!tx && (user.plan === 'Free' || !user.plan) && transactions.length >= 20) {
       setIsUpgradeModalOpen(true);
       return;
