@@ -35,7 +35,7 @@ export default function ProductsPage() {
   );
 
   const handleOpenModal = (product?: Product) => {
-    // Check limit for Free plan (5 products)
+   
     if (!product && (user.plan === 'Free' || !user.plan) && products.length >= 5) {
       setIsUpgradeModalOpen(true);
       return;
