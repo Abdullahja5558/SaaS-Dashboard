@@ -627,7 +627,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Reviews Section */}
       <ReviewsCarousel />
 
       {/* Premium Footer */}
