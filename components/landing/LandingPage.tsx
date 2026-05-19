@@ -467,7 +467,7 @@ export default function LandingPage() {
 
             {/* Main dashboard glass panel */}
             <div className="relative z-10 glass-card rounded-[32px] md:rounded-[48px] p-3 md:p-5 border border-border/40 shadow-[0_40px_120px_rgba(0,0,0,0.12)] overflow-hidden">
-              {/* Inner top bar */}
+              
               <div className="flex items-center justify-between px-4 py-3 mb-4 border-b border-border/40">
                 <div className="flex items-center gap-2.5">
                   <div className="w-7 h-7 bg-primary rounded-lg flex items-center justify-center">
