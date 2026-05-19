@@ -397,7 +397,7 @@ export default function LandingPage() {
 
       {/* ─── Live Intelligence Showcase ─── */}
       <section className="py-24 md:py-32 relative z-20 overflow-hidden">
-        {/* Ambient glows */}
+        
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-primary/6 blur-[120px] rounded-full" />
           <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-purple-500/5 blur-[100px] rounded-full" />
