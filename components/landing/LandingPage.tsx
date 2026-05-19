@@ -433,7 +433,7 @@ export default function LandingPage() {
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="relative"
           >
-            {/* Floating accent cards */}
+           
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
