@@ -516,7 +516,6 @@ export default function LandingPage() {
                   ))}
                 </div>
 
-                {/* Center: Revenue bar chart */}
                 <div className="md:col-span-1 p-4 rounded-2xl bg-background/60 border border-border/40 backdrop-blur-sm flex flex-col">
                   <div className="flex items-center justify-between mb-4">
                     <div>
