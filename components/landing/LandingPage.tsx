@@ -486,7 +486,6 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              {/* Dashboard body: 3-col layout */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-2 pb-2">
 
                 <div className="flex flex-col gap-3">
