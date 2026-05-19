@@ -489,7 +489,6 @@ export default function LandingPage() {
               {/* Dashboard body: 3-col layout */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-2 pb-2">
 
-                {/* Left: KPI cards */}
                 <div className="flex flex-col gap-3">
                   {[
                     { icon: <DollarSign size={16} />, label: 'Total Revenue', value: '$128,400', change: '+18.2%', color: 'text-emerald-500', bg: 'bg-emerald-500/10' },
