@@ -597,7 +597,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Features Grid */}
       <section className="py-32 relative z-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
            <motion.h2 
